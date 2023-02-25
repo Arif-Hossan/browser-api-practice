@@ -13,7 +13,8 @@ const setDisplayValue = (id,value) =>{
 const increment = () =>{
    let currentValue = getValue();
    currentValue= currentValue + 1;
-   console.log(currentValue);
+//    console.log(currentValue);
+   setValueToLocalStorage("count",currentValue);
    setDisplayValue('countValue',currentValue);
 }
 // decrement the value
@@ -25,6 +26,31 @@ const decrement = () =>{
     else{
         alert("Negative number is not allowed")
     }
-    console.log(currentValue);
+    // console.log(currentValue);
+    setValueToLocalStorage("count",currentValue);
     setDisplayValue('countValue',currentValue);
 }
+// get value from local storage
+const getValueFromLocalStorage =()=>{
+    let savedValue= localStorage.getItem('count');
+    let value = null;
+    if (savedValue !==null && !isNaN(savedValue) ){
+        value =parseInt(savedValue);
+    }
+    return value;
+}
+// set value to local storage
+const setValueToLocalStorage = (key,value)=>{
+    localStorage.setItem(key,value.toString());
+}
+// display Value from local storage
+const displayValueFromLocalStorage = ()=>{
+    const value= getValueFromLocalStorage();
+    if(value !==null){
+        setDisplayValue('countValue',value);
+    }
+
+    // setDisplayValue("countValue",value);
+}
+displayValueFromLocalStorage();
+
