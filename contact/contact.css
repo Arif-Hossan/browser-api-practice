@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+label{
+    color:lightblue;
+}
+button{
+    color: yellow;
+    background-color:red;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+/* centering the contact container */
+.contact-container{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    /* text-align: center; */
+    color: white;
+}
+/* centering the input field */
+.input-field{
+    margin: auto;
+    width: 65%;
+}
+.contact-header{
+    text-align: center;
+}
+.reset-btn{
+    margin-left: 40%;
+    background-color: yellow;
+    color: black;
+    font-size: 25px;
+    border-radius: 15px;
+    padding: 5px 30px;
+}
